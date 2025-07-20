@@ -57,8 +57,6 @@ export default function Home() {
                      Review your submissions and check AI-powered feedback.
                   </h2>
                )}
-
-               <h2>Review your submissions and check AI-Powered feedback.</h2>
             </div>
             {loadingResumes && (
                <div className="flex flex-col items-center justify-center ">
@@ -78,7 +76,7 @@ export default function Home() {
                </div>
             )}
 
-            {!loadingResumes && resumes?.length > 0 && (
+            {!loadingResumes && !resumes?.length && (
                <div className="flex flex-col items-center justify-center mt-10 gap-4">
                   <Link
                      to="/upload"
