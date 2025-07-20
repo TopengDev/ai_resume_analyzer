@@ -5,7 +5,7 @@
    "scripts": {
       "build": "react-router build",
       "dev": "react-router dev",
-      "start": "react-router-serve ./build/server/index.js",
+      "start": "npx serve ./build/server/index.js -p 3223",
       "typecheck": "react-router typegen && tsc",
       "preview": "npx vite preview --port 3223 --host 0.0.0.0"
    },
