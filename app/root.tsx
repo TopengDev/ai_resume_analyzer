@@ -6,11 +6,13 @@ import {
    Scripts,
    ScrollRestoration,
 } from 'react-router';
+import { Bounce, ToastContainer } from 'react-toastify';
 
 import type { Route } from './+types/root';
 import './app.css';
 import { usePuterStore } from './lib/puter';
 import { useEffect } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const links: Route.LinksFunction = () => [
    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -45,7 +47,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
          </head>
          <body>
             <script src="https://js.puter.com/v2/"></script>
-
+            <ToastContainer
+               position="top-right"
+               autoClose={5000}
+               hideProgressBar={false}
+               newestOnTop={false}
+               closeOnClick={false}
+               rtl={false}
+               pauseOnFocusLoss
+               draggable
+               pauseOnHover
+               theme="light"
+               transition={Bounce}
+            />
             {children}
             <ScrollRestoration />
             <Scripts />
