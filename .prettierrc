@@ -1,5 +1,7 @@
 {
-  "tabWidth": 3,
-  "singleQuote": true,
-  "trailingComma": "all"
+   "tabWidth": 3,
+   "singleQuote": true,
+   "trailingComma": "all",
+   "objectWrap": "preserve",
+   "proseWrap": "always"
 }
