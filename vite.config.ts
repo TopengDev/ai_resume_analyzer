@@ -8,8 +8,9 @@ export default defineConfig({
    server: {
       host: '0.0.0.0', // Listen on all network interfaces
       port: 3223, // Set the port to 3223
+      allowedHosts: ['resumind.topengdev.com'],
    },
    preview: {
-      allowedHosts: ['resumind.topengdev.com'], // Allow all hosts for preview
+      allowedHosts: ['resumind.topengdev.com'],
    },
 });
