@@ -1,4 +1,4 @@
-import { prepareInstructions } from '../../constants';
+import { AIResponseFormat, prepareInstructions } from '../../constants';
 import React, { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import FileUploader from '~/components/FileUploader';
@@ -65,7 +65,7 @@ const Upload = () => {
          prepareInstructions({
             jobTitle,
             jobDescription,
-            AIResponseFormat: 'json',
+            AIResponseFormat,
          }),
       );
       if (!feedback)
@@ -79,7 +79,8 @@ const Upload = () => {
       data.feedback = JSON.parse(feedbackText);
       await kv.set(`resume:${uuid}`, JSON.stringify(data));
       setStatusText('Analysis complete! Redirecting ...');
-      console.log({ data });
+
+      navigate(`/resume/${uuid}`);
    }
 
    function handleSubmit(e: FormEvent<HTMLFormElement>) {
